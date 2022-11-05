@@ -1,0 +1,21 @@
+buildscript {
+    repositories {
+        gradlePluginPortal()
+    }
+}
+
+apply plugin: 'idea'
+apply plugin: 'base'
+
+subprojects {
+    if (it.name != 'common') {
+        it.tasks.withType(Jar) {
+            destinationDirectory = file("../bin")
+        }
+    }
+}
+
+clean.doLast {
+    def binDir = new File('./bin')
+    binDir.deleteDir()
+}

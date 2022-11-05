@@ -1,0 +1,16 @@
+plugins {
+    id 'java'
+    id 'idea'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+sourceCompatibility = JavaVersion.VERSION_11
+
+dependencies {
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+    compileOnly 'com.fasterxml.jackson.core:jackson-annotations:2.11.4'
+}
